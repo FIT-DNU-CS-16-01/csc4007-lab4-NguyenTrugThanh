@@ -1,0 +1,60 @@
+{
+  "dataset": "imdb",
+  "dataset_path": null,
+  "seed": 42,
+  "device": "cpu",
+  "model_type": "lstm",
+  "architecture": "Tokenized text -> Embedding -> recurrent encoder -> Dropout -> Linear classifier",
+  "bidirectional": false,
+  "num_layers": 1,
+  "vocab_size_requested": 20000,
+  "vocab_size_actual": 20000,
+  "max_len": 256,
+  "embed_dim": 128,
+  "hidden_dim": 128,
+  "dropout": 0.3,
+  "batch_size": 64,
+  "epochs_requested": 6,
+  "epochs_trained": 6,
+  "lr": 0.001,
+  "weight_decay": 0.0001,
+  "patience": 2,
+  "splits": {
+    "train": 21250,
+    "val": 3750,
+    "test": 25000
+  },
+  "sequence_audit": {
+    "num_train_examples": 21250,
+    "vocab_size_actual": 20000,
+    "max_len": 256,
+    "length_min": 11,
+    "length_p25": 153.0,
+    "length_median": 213.0,
+    "length_p75": 348.0,
+    "length_p90": 561.0,
+    "length_max": 2819,
+    "truncated_count": 8324,
+    "truncated_rate": 0.3917176470588235,
+    "unk_token_count": 85638,
+    "non_pad_token_count": 4224232,
+    "unk_rate_after_vocab": 0.020273034246225112
+  },
+  "val": {
+    "loss": 0.439673904299736,
+    "accuracy": 0.8181333333333334,
+    "macro_precision": 0.8181854648398927,
+    "macro_recall": 0.8181333333333334,
+    "macro_f1": 0.8181258837695324
+  },
+  "test": {
+    "loss": 0.44948040798187255,
+    "accuracy": 0.81556,
+    "macro_precision": 0.8156291354058193,
+    "macro_recall": 0.8155600000000001,
+    "macro_f1": 0.8155498995124972
+  },
+  "generated_at": "2026-05-11T07:07:51.429010+00:00",
+  "selection_rule": "Best checkpoint selected by validation macro-F1, final report on test split.",
+  "fair_comparison_note": "Compare variants using the same dataset, split protocol, seed, and metrics."
+}
